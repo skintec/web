@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skintec | Aislación Térmica, Acústica y Protección Pasiva Contra Incendios</title>
+<meta name="description" content="Skintec — distribuidor técnico de materiales de aislación térmica y acústica, protección pasiva contra incendios, tabiques y cielos. 25+ años en el rubro de la construcción en Chile.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --graphite: #14171A;
+    --surface: #1C2023;
+    --surface-2: #22272B;
+    --paper: #EDEAE2;
+    --paper-dim: #A8A79E;
+    --fire: #E15525;
+    --fire-dim: #7A3320;
+    --steel: #5C7A9A;
+    --steel-dim: #34445A;
+    --line: rgba(237,234,226,0.14);
+    --line-strong: rgba(237,234,226,0.28);
+    --radius: 2px;
+    --maxw: 1180px;
+    --font-display: 'Barlow Condensed', sans-serif;
+    --font-body: 'IBM Plex Sans', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--graphite);
+    color: var(--paper);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color: inherit; }
+
+  h1,h2,h3,h4{
+    font-family: var(--font-display);
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.2px;
+  }
+
+  .wrap{
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  :focus-visible{
+    outline: 2px solid var(--fire);
+    outline-offset: 3px;
+  }
+
+  /* corner ticks — blueprint registration marks */
+  .ticked{ position: relative; }
+  .ticked::before, .ticked::after{
+    content:"";
+    position:absolute;
+    width:10px; height:10px;
+    border: 1px solid var(--line-strong);
+  }
+  .ticked::before{ top:-1px; left:-1px; border-right:none; border-bottom:none; }
+  .ticked::after{ bottom:-1px; right:-1px; border-left:none; border-top:none; }
+
+  /* ---------- header ---------- */
+  header{
+    position: sticky;
+    top:0;
+    z-index: 50;
+    background: rgba(20,23,26,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height: 76px;
+  }
+  .logo{
+    font-family: var(--font-display);
+    font-size: 1.55rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+  }
+  .logo span{ color: var(--fire); }
+  .logo small{
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 400;
+    color: var(--paper-dim);
+    letter-spacing: 1px;
+  }
+  nav ul{
+    list-style:none;
+    display:flex;
+    gap: 34px;
+    margin:0; padding:0;
+    font-size: 0.95rem;
+  }
+  nav ul a{
+    text-decoration:none;
+    color: var(--paper-dim);
+    transition: color 0.15s ease;
+    padding: 6px 0;
+    border-bottom: 1px solid transparent;
+  }
+  nav ul a:hover, nav ul a:focus-visible{
+    color: var(--paper);
+    border-bottom-color: var(--fire);
+  }
+  .nav-cta{
+    background: var(--fire);
+    color: var(--graphite);
+    font-weight: 600;
+    padding: 9px 18px;
+    text-decoration:none;
+    font-size: 0.9rem;
+    border-radius: var(--radius);
+  }
+  .menu-btn{ display:none; background:none; border:1px solid var(--line-strong); color:var(--paper); padding:8px 12px; font-size:1.1rem; }
+
+  @media (max-width: 900px){
+    nav ul{ display:none; }
+    .nav-cta{ display:none; }
+    .menu-btn{ display:block; }
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding: 84px 0 96px;
+    border-bottom: 1px solid var(--line);
+    background:
+      linear-gradient(var(--line) 1px, transparent 1px) 0 0/100% 42px,
+      var(--graphite);
+    background-blend-mode: normal;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 56px;
+    align-items:center;
+  }
+  .eyebrow-line{
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--steel);
+    letter-spacing: 0.3px;
+    margin-bottom: 18px;
+    display:flex;
+    align-items:center;
+    gap: 10px;
+  }
+  .eyebrow-line::before{
+    content:"";
+    width: 26px; height:1px;
+    background: var(--steel);
+    display:inline-block;
+  }
+  .hero h1{
+    font-size: clamp(2.4rem, 4.6vw, 3.7rem);
+    line-height: 1.04;
+    max-width: 14ch;
+  }
+  .hero p.lede{
+    font-size: 1.1rem;
+    color: var(--paper-dim);
+    max-width: 46ch;
+    margin-top: 22px;
+  }
+  .hero-actions{
+    display:flex;
+    gap:16px;
+    margin-top: 34px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding: 13px 22px;
+    text-decoration:none;
+    font-weight:600;
+    font-size: 0.95rem;
+    border-radius: var(--radius);
+    border: 1px solid transparent;
+  }
+  .btn-primary{ background: var(--fire); color: var(--graphite); }
+  .btn-primary:hover{ background:#f0693c; }
+  .btn-ghost{ border-color: var(--line-strong); color: var(--paper); }
+  .btn-ghost:hover{ border-color: var(--paper); }
+
+  .hero-stats{
+    display:flex;
+    gap: 34px;
+    margin-top: 48px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+  }
+  .hero-stats div b{
+    font-family: var(--font-display);
+    font-size: 1.9rem;
+    display:block;
+    color: var(--paper);
+    font-weight: 700;
+  }
+  .hero-stats div span{
+    font-size: 0.82rem;
+    color: var(--paper-dim);
+  }
+
+  /* hero technical diagram panel */
+  .diagram-panel{
+    border: 1px solid var(--line-strong);
+    background: var(--surface);
+    padding: 22px 22px 18px;
+  }
+  .diagram-panel .cap{
+    display:flex;
+    justify-content:space-between;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--paper-dim);
+    margin-bottom: 14px;
+    letter-spacing: 0.3px;
+  }
+  .diagram-panel .cap b{ color: var(--fire); font-weight: 500; }
+
+  /* ---------- section shell ---------- */
+  section{ padding: 92px 0; border-bottom: 1px solid var(--line); }
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap: 40px;
+    margin-bottom: 52px;
+  }
+  .section-head h2{
+    font-size: clamp(1.9rem, 3vw, 2.5rem);
+    max-width: 16ch;
+  }
+  .section-head p{
+    color: var(--paper-dim);
+    max-width: 38ch;
+    font-size: 0.98rem;
+    margin: 0;
+  }
+  .ref{
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--steel);
+  }
+
+  /* ---------- empresa ---------- */
+  .empresa-grid{
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 64px;
+  }
+  .empresa-grid p{ color: var(--paper-dim); margin: 0 0 16px; }
+  .empresa-grid p:last-child{ margin-bottom:0; }
+  .empresa-list{
+    list-style:none;
+    margin:0; padding:0;
+    display:grid;
+    gap: 0;
+    border-top: 1px solid var(--line);
+  }
+  .empresa-list li{
+    display:flex;
+    justify-content:space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.95rem;
+  }
+  .empresa-list li span:first-child{ color: var(--paper-dim); }
+  .empresa-list li span:last-child{ font-family: var(--font-mono); color: var(--paper); }
+
+  /* ---------- productos ---------- */
+  .lines{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .line-card{
+    background: var(--graphite);
+    padding: 30px 26px 32px;
+    display:flex;
+    flex-direction:column;
+    min-height: 340px;
+  }
+  .line-card .tag{
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--fire);
+    margin-bottom: 20px;
+  }
+  .line-card.steel-tag .tag{ color: var(--steel); }
+  .line-card h3{
+    font-size: 1.5rem;
+    margin-bottom: 14px;
+    line-height:1.1;
+  }
+  .line-card p{
+    color: var(--paper-dim);
+    font-size: 0.92rem;
+    flex-grow:1;
+  }
+  .line-card ul{
+    list-style:none;
+    margin: 18px 0 0;
+    padding: 16px 0 0;
+    border-top: 1px solid var(--line);
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .line-card li{
+    font-size: 0.85rem;
+    color: var(--paper-dim);
+    display:flex;
+    gap:10px;
+  }
+  .line-card li::before{
+    content:"—";
+    color: var(--line-strong);
+  }
+  .line-card a{
+    margin-top: 22px;
+    font-size: 0.88rem;
+    text-decoration:none;
+    color: var(--paper);
+    border-bottom: 1px solid var(--fire);
+    align-self:flex-start;
+    padding-bottom: 2px;
+  }
+
+  @media (max-width: 900px){
+    .lines{ grid-template-columns: 1fr; }
+    .empresa-grid, .hero-grid{ grid-template-columns: 1fr; }
+    .hero-grid{ gap: 44px; }
+  }
+
+  /* ---------- industrias ---------- */
+  .industry-grid{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+  }
+  .industry-cell{
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 26px 20px;
+    font-size: 0.95rem;
+    color: var(--paper-dim);
+    display:flex;
+    align-items:center;
+    min-height: 92px;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .industry-cell:hover{ background: var(--surface); color: var(--paper); }
+  @media (max-width: 900px){
+    .industry-grid{ grid-template-columns: repeat(2,1fr); }
+  }
+
+  /* ---------- contacto ---------- */
+  .contact-grid{
+    display:grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 64px;
+  }
+  .contact-block{ padding: 26px 0; border-top: 1px solid var(--line); }
+  .contact-block:first-child{ border-top:none; }
+  .contact-block .label{
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--steel);
+    margin-bottom: 8px;
+  }
+  .contact-block a, .contact-block div{
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    text-decoration:none;
+    font-weight: 500;
+  }
+  .contact-form{
+    background: var(--surface);
+    border: 1px solid var(--line-strong);
+    padding: 30px;
+  }
+  .contact-form .row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
+  .contact-form label{ display:block; font-size:0.8rem; color:var(--paper-dim); margin-bottom:6px; font-family: var(--font-mono); }
+  .contact-form input, .contact-form textarea, .contact-form select{
+    width:100%;
+    background: var(--graphite);
+    border: 1px solid var(--line-strong);
+    color: var(--paper);
+    padding: 11px 12px;
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    border-radius: var(--radius);
+  }
+  .contact-form textarea{ min-height:96px; resize:vertical; }
+  .contact-form .full{ margin-bottom:16px; }
+  @media (max-width: 900px){
+    .contact-grid{ grid-template-columns: 1fr; }
+    .contact-form .row{ grid-template-columns: 1fr; }
+  }
+
+  footer{
+    padding: 40px 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:16px;
+    font-size: 0.85rem;
+    color: var(--paper-dim);
+  }
+  footer a{ text-decoration:none; color: var(--paper-dim); }
+  footer a:hover{ color: var(--paper); }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ transition:none !important; animation:none !important; }
+  }
+
+  /* one orchestrated entrance for the hero only */
+  .hero-grid > *{
+    opacity:0;
+    transform: translateY(10px);
+    animation: rise 0.6s ease forwards;
+  }
+  .hero-grid > *:nth-child(2){ animation-delay: 0.12s; }
+  @keyframes rise{ to{ opacity:1; transform:none; } }
+  @media (prefers-reduced-motion: reduce){
+    .hero-grid > *{ opacity:1; transform:none; animation:none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo">skin<span>tec</span><small>DESDE&nbsp;1999</small></div>
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="#empresa">Empresa</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#industrias">Industrias</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="#contacto">Cotizar</a>
+    <button class="menu-btn" aria-label="Abrir menú">☰</button>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow-line">Distribuidor técnico de materiales para la construcción</div>
+      <h1>Materiales que detienen el fuego, el frío y el ruido antes de que lleguen a las personas</h1>
+      <p class="lede">Aislación térmica y acústica, protección pasiva contra incendios, tabiques, cielos y recubrimientos metálicos. Importamos y distribuimos desde hace más de 25 años para minería, industria, construcción y climatización en todo Chile.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#productos">Ver líneas de producto</a>
+        <a class="btn btn-ghost" href="#contacto">Hablar con ventas</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>25+</b><span>años en el rubro</span></div>
+        <div><b>3</b><span>líneas de producto</span></div>
+        <div><b>10+</b><span>industrias atendidas</span></div>
+      </div>
+    </div>
+
+    <div class="diagram-panel ticked">
+      <div class="cap"><span>FICHA <b>PPC-01</b></span><span>MURO CORTAFUEGO — CORTE</span></div>
+      <svg viewBox="0 0 420 340" width="100%" role="img" aria-labelledby="diagramTitle">
+        <title id="diagramTitle">Corte técnico de un muro con protección pasiva contra incendios, mostrando placa de yeso cartón RF, lana mineral, cámara de aire y placa fibrosilicato</title>
+        <defs>
+          <pattern id="wool" width="10" height="10" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+            <rect width="10" height="10" fill="#5C7A9A" opacity="0.18"/>
+            <line x1="0" y1="0" x2="0" y2="10" stroke="#5C7A9A" stroke-width="2" opacity="0.55"/>
+          </pattern>
+        </defs>
+
+        <!-- layers -->
+        <rect x="60" y="40" width="18" height="260" fill="#EDEAE2" opacity="0.9"/>
+        <rect x="78" y="40" width="46" height="260" fill="url(#wool)"/>
+        <rect x="124" y="40" width="30" height="260" fill="#14171A" stroke="#3a3f43" stroke-width="1"/>
+        <rect x="154" y="40" width="22" height="260" fill="#E15525" opacity="0.85"/>
+        <rect x="176" y="40" width="14" height="260" fill="#8a8f92"/>
+
+        <!-- leader lines + labels -->
+        <line x1="69" y1="40" x2="69" y2="20" stroke="#5C7A9A" stroke-width="1"/>
+        <line x1="69" y1="20" x2="230" y2="20" stroke="#5C7A9A" stroke-width="1"/>
+        <text x="234" y="24" fill="#A8A79E" font-family="IBM Plex Mono" font-size="11">Yeso cartón RF · 15mm</text>
+
+        <line x1="101" y1="40" x2="101" y2="70" stroke="#5C7A9A" stroke-width="1"/>
+        <line x1="101" y1="70" x2="230" y2="70" stroke="#5C7A9A" stroke-width="1"/>
+        <text x="234" y="74" fill="#A8A79E" font-family="IBM Plex Mono" font-size="11">Lana mineral · 50mm</text>
+
+        <line x1="139" y1="40" x2="139" y2="120" stroke="#5C7A9A" stroke-width="1"/>
+        <line x1="139" y1="120" x2="230" y2="120" stroke="#5C7A9A" stroke-width="1"/>
+        <text x="234" y="124" fill="#A8A79E" font-family="IBM Plex Mono" font-size="11">Cámara de aire</text>
+
+        <line x1="165" y1="40" x2="165" y2="170" stroke="#E15525" stroke-width="1"/>
+        <line x1="165" y1="170" x2="230" y2="170" stroke="#E15525" stroke-width="1"/>
+        <text x="234" y="174" fill="#EDEAE2" font-family="IBM Plex Mono" font-size="11">Fibrosilicato · RF-120</text>
+
+        <line x1="183" y1="40" x2="183" y2="220" stroke="#8a8f92" stroke-width="1"/>
+        <line x1="183" y1="220" x2="230" y2="220" stroke="#8a8f92" stroke-width="1"/>
+        <text x="234" y="224" fill="#A8A79E" font-family="IBM Plex Mono" font-size="11">Zincalum · terminación</text>
+
+        <!-- baseline dimension -->
+        <line x1="60" y1="318" x2="190" y2="318" stroke="#3a3f43" stroke-width="1"/>
+        <line x1="60" y1="312" x2="60" y2="324" stroke="#3a3f43" stroke-width="1"/>
+        <line x1="190" y1="312" x2="190" y2="324" stroke="#3a3f43" stroke-width="1"/>
+        <text x="90" y="334" fill="#5f6467" font-family="IBM Plex Mono" font-size="10">130mm espesor total</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="empresa">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Más de 25 años como socio técnico de la construcción</h2>
+      <p class="ref">FICHA EMP-01</p>
+    </div>
+    <div class="empresa-grid">
+      <div>
+        <p>Somos especialistas en aislamiento térmico y acústico, con líneas adicionales de protección pasiva contra incendios, tabiquería, cielos y fachadas ventiladas. Importamos y distribuimos productos de las principales fábricas nacionales e internacionales de materiales para la construcción y el montaje industrial.</p>
+        <p>Nuestros productos están presentes donde el riesgo es alto y la exigencia técnica no admite errores: minería, celulosas, centrales termoeléctricas, túneles, aviones y barcos. También están en la vida diaria de las personas: escuelas, edificios, clínicas, estadios y hoteles.</p>
+        <p>Trabajamos como socio estratégico de nuestros clientes, no solo como proveedor de materiales — acompañamos cada proyecto con asesoría técnica y productos certificados.</p>
+      </div>
+      <ul class="empresa-list">
+        <li><span>Rubro</span><span>Construcción industrial</span></li>
+        <li><span>Trayectoria</span><span>25+ años</span></li>
+        <li><span>Alcance</span><span>Nacional — Chile</span></li>
+        <li><span>Modalidad de venta</span><span>Online</span></li>
+        <li><span>Sectores clave</span><span>Minería / Industria / Salud</span></li>
+        <li><span>Líneas de producto</span><span>03</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="productos">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Líneas de producto</h2>
+      <p>Tres frentes técnicos, un mismo objetivo: comodidad y seguridad en cada construcción.</p>
+    </div>
+    <div class="lines">
+      <div class="line-card steel-tag">
+        <div class="tag">LÍNEA 01 — TÉRMICO / ACÚSTICO</div>
+        <h3>Aislación térmica y absorbente acústico</h3>
+        <p>Lana mineral, lana de vidrio y fibra cerámica para uso residencial, industrial-comercial y climatización-refrigeración.</p>
+        <ul>
+          <li>Colchonetas y paneles de lana mineral</li>
+          <li>Rollos de lana de vidrio con foil o polipropileno</li>
+          <li>Espuma elastomérica para ductos</li>
+          <li>Caños premoldeados y a granel</li>
+        </ul>
+        <a href="#contacto">Consultar ficha técnica</a>
+      </div>
+      <div class="line-card">
+        <div class="tag">LÍNEA 02 — PPC INCENDIOS</div>
+        <h3>Protección pasiva contra incendios</h3>
+        <p>Placas, sellos de pasada y sistemas para muros cortina que contienen el fuego y el humo en compartimentos definidos.</p>
+        <ul>
+          <li>Fibrosilicato PROMATECT-H</li>
+          <li>Yeso cartón KNAUF resistente al fuego (RF)</li>
+          <li>Placas DURASTEEL resistentes a explosión</li>
+          <li>Cinta intumescente y masillas PROMASEAL</li>
+        </ul>
+        <a href="#contacto">Consultar ficha técnica</a>
+      </div>
+      <div class="line-card steel-tag">
+        <div class="tag">LÍNEA 03 — TABIQUES Y CIELOS</div>
+        <h3>Tabiques, cielos y recubrimientos</h3>
+        <p>Sistemas de tabiquería, cielos falsos, fachadas ventiladas y recubrimientos metálicos térmicos para terminación.</p>
+        <ul>
+          <li>Planchas de yeso cartón KNAUF (RF, RH, ST)</li>
+          <li>Planchas de fibrocemento cortadas y pintadas</li>
+          <li>Fachadas ventiladas y cielos falsos</li>
+          <li>Chaquetas y bobinas de aluminio / zincalum</li>
+        </ul>
+        <a href="#contacto">Consultar ficha técnica</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="industrias">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Dónde trabajan nuestros materiales</h2>
+      <p class="ref">FICHA IND-01</p>
+    </div>
+    <div class="industry-grid">
+      <div class="industry-cell">Minería</div>
+      <div class="industry-cell">Celulosas</div>
+      <div class="industry-cell">Centrales termoeléctricas</div>
+      <div class="industry-cell">Túneles</div>
+      <div class="industry-cell">Aviones</div>
+      <div class="industry-cell">Barcos</div>
+      <div class="industry-cell">Escuelas</div>
+      <div class="industry-cell">Edificios</div>
+      <div class="industry-cell">Clínicas</div>
+      <div class="industry-cell">Estadios</div>
+      <div class="industry-cell">Hoteles</div>
+      <div class="industry-cell">Climatización</div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap contact-grid">
+    <div>
+      <h2 style="margin-bottom:30px;">Hablemos de tu proyecto</h2>
+      <div class="contact-block">
+        <div class="label">TELÉFONO</div>
+        <a href="tel:+56222839526">+56 2 2283 9526</a>
+      </div>
+      <div class="contact-block">
+        <div class="label">MÓVIL</div>
+        <a href="tel:+56964250570">+56 9 6425 0570</a>
+      </div>
+      <div class="contact-block">
+        <div class="label">EMAIL</div>
+        <a href="mailto:ventas@skintec.cl">ventas@skintec.cl</a>
+      </div>
+      <div class="contact-block">
+        <div class="label">MODALIDAD</div>
+        <div>Ventas solo online</div>
+      </div>
+    </div>
+    <form class="contact-form" action="mailto:ventas@skintec.cl" method="post" enctype="text/plain">
+      <div class="row">
+        <div>
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" required>
+        </div>
+        <div>
+          <label for="empresa">Empresa</label>
+          <input id="empresa" name="empresa" type="text">
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+        <div>
+          <label for="linea">Línea de interés</label>
+          <select id="linea" name="linea">
+            <option>Aislación térmica y acústica</option>
+            <option>Protección pasiva contra incendios</option>
+            <option>Tabiques y cielos</option>
+            <option>Otro</option>
+          </select>
+        </div>
+      </div>
+      <div class="full">
+        <label for="mensaje">Cuéntanos sobre tu proyecto</label>
+        <textarea id="mensaje" name="mensaje"></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit">Enviar consulta</button>
+    </form>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div>© <span id="year"></span> Skintec. Distribuidor técnico de materiales de aislación y protección contra incendios.</div>
+  <div><a href="mailto:ventas@skintec.cl">ventas@skintec.cl</a></div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
